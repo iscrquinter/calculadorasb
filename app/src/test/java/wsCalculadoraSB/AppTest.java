@@ -6,9 +6,20 @@ package wsCalculadoraSB;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+
 public class AppTest {
+    Calculadora c;
+    @Before public void setUp() {
+        c = new Calculadora();
+    }
+
     @Test public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    }
+
+    @Test public void testSuma() {
+        assertTrue(c.suma(3, 5)==8);
     }
 }
